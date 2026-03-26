@@ -26,7 +26,8 @@ The interface is designed to guide the user through the menu system in a simple 
    - **If Chess is selected and "Play" is pressed:**
      - The interface transitions to the `InstructionsCanvas`.
      - The instructions panel appears, guiding the user on how to proceed.
-     - The user can then press the **OKAY button** to confirm and continue.
+     - The user can then press the **OKAY button** to confirm and hide `InstructionsCanvas`.
+     - At the saem time the `ChessModel` will appear displaying the Board Game as well as `GameplayCanvas` with interactive rules (when pressed the `InstructionsCanvas` appears on screen again) and exit (exit back to the `InitialInterfaceCanvas`) buttons.
 
 ---
 
@@ -80,7 +81,29 @@ The project consists of three main UI canvases:
      - **OKAY Button**
        - Size: 120 x 150
        - Position: X: 140, Y: -340, Z: 0
+       - Background: Okay button image
        - Component: `ButtonAnimator` script
+       - Inspector → `OnClick()` → `InstructionCanvas` → `InstructionsUI` → `ShowInstructions()`
+    - Component: `InstructionsUI` script
+    - Initially inactive
+
+4. **GameplayCanvas**
+   - Size: 1500 x 1000
+   - Position: X: 0, Y: 1.5, Z: 2
+   - Contains a panel with the rules and exit buttons.
+   - Inside the panel:
+     - **RULES Button**
+       - Size: 100 x 100
+       - Position: X: -700, Y: 440, Z: 0
+       - Background: Rules button image
+       - Component: `ButtonAnimator` script
+       - Inspector → `OnClick()` → `InstructionCanvas` → `InstructionsUI` → `OnOKPressed()`
+     - **EXIT Button**
+       - Size: 100 x 100
+       - Position: X: 700, Y: 440, Z: 0
+       - Background: Exit button image
+       - Component: `ButtonAnimator` script
+       - Inspector → `OnClick()` → `InstructionCanvas` → `OnExitToMenu()`
     - Initially inactive
 
 Finally, an **empty GameObject** called `MenuManager` is created to hold all canvases and is linked to the `MenuManager` script. Inspector values must be set accordingly.
@@ -90,6 +113,6 @@ Finally, an **empty GameObject** called `MenuManager` is created to hold all can
 
 ## Demonstration
 
-Check the `MainMenuDemoVideo.mp4` for a visual walkthrough of:
+Check the `MainMenuDemoVideo.mp4` for a visual walkthrough of the working system.
 
 ---
