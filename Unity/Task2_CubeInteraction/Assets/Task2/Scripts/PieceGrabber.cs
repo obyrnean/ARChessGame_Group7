@@ -1,12 +1,11 @@
 using UnityEngine;
-using UnityEngine.XR.ARFoundation;
+using UnityEngine.InputSystem;
 
 public class PieceGrabber : MonoBehaviour
 {
-    public float grabDistance = 0.1f;
+    public float grabDistance = 10f;
 
     private GameObject grabbedPiece = null;
-    private Vector3 grabOffset;
     private Camera arCamera;
 
     void Start()
@@ -16,53 +15,92 @@ public class PieceGrabber : MonoBehaviour
 
     void Update()
     {
-        if (Input.touchCount == 2)
+#if UNITY_EDITOR
+        HandleEditorInput();
+#else
+        HandleTouchInput();
+#endif
+    }
+
+    void HandleEditorInput()
+    {
+        if (Mouse.current == null) return;
+
+        Vector2 mousePos = Mouse.current.position.ReadValue();
+        Ray ray = arCamera.ScreenPointToRay(mousePos);
+        RaycastHit hit;
+
+        // Right-click to grab
+        if (Mouse.current.rightButton.wasPressedThisFrame)
         {
-            Touch touch0 = Input.GetTouch(0);
-            Touch touch1 = Input.GetTouch(1);
-
-            Vector2 midpoint = (touch0.position + touch1.position) / 2;
-            float pinchDistance = Vector2.Distance(touch0.position, touch1.position);
-            bool isPinching = pinchDistance < 100f;
-
-            Ray ray = arCamera.ScreenPointToRay(midpoint);
-            RaycastHit hit;
-
-            if (isPinching && grabbedPiece == null)
-            {
-                if (Physics.Raycast(ray, out hit, grabDistance * 100))
-                {
-                    GameObject target = hit.collider.gameObject;
-                    // Only grab pieces, not the board
-                    if (target.name.Contains("King") || 
-                        target.name.Contains("Queen") ||
-                        target.name.Contains("Rook") ||
-                        target.name.Contains("Bishop") ||
-                        target.name.Contains("Knight") ||
-                        target.name.Contains("Pawn"))
-                    {
-                        grabbedPiece = target;
-                        grabOffset = grabbedPiece.transform.position - ray.GetPoint(hit.distance);
-                    }
-                }
-            }
-
-            if (!isPinching)
-            {
-                grabbedPiece = null;
-            }
-
-            if (grabbedPiece != null)
-            {
-                if (Physics.Raycast(ray, out hit))
-                {
-                    grabbedPiece.transform.position = ray.GetPoint(hit.distance) + grabOffset;
-                }
-            }
+            if (Physics.Raycast(ray, out hit, grabDistance))
+                TryGrab(hit.collider.gameObject);
         }
-        else
+
+        // Release on right button up
+        if (Mouse.current.rightButton.wasReleasedThisFrame)
+            grabbedPiece = null;
+
+        // Drag grabbed piece
+        if (grabbedPiece != null)
+        {
+            float depth = Vector3.Distance(arCamera.transform.position, grabbedPiece.transform.position);
+            Vector3 worldPoint = arCamera.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, depth));
+            grabbedPiece.transform.position = worldPoint;
+        }
+    }
+
+    void HandleTouchInput()
+    {
+        if (Touchscreen.current == null || Touchscreen.current.touches.Count < 2) 
         {
             grabbedPiece = null;
+            return;
         }
+
+        var touch0 = Touchscreen.current.touches[0];
+        var touch1 = Touchscreen.current.touches[1];
+
+        Vector2 pos0 = touch0.position.ReadValue();
+        Vector2 pos1 = touch1.position.ReadValue();
+        Vector2 midpoint = (pos0 + pos1) / 2f;
+
+        float pinchDistance = Vector2.Distance(pos0, pos1);
+        bool isPinching = pinchDistance < 100f;
+
+        Ray ray = arCamera.ScreenPointToRay(midpoint);
+        RaycastHit hit;
+
+        if (isPinching && grabbedPiece == null)
+        {
+            if (Physics.Raycast(ray, out hit, grabDistance))
+                TryGrab(hit.collider.gameObject);
+        }
+
+        if (!isPinching)
+            grabbedPiece = null;
+
+        if (grabbedPiece != null)
+        {
+            float depth = Vector3.Distance(arCamera.transform.position, grabbedPiece.transform.position);
+            Vector3 worldPoint = arCamera.ScreenToWorldPoint(new Vector3(midpoint.x, midpoint.y, depth));
+            grabbedPiece.transform.position = worldPoint;
+        }
+    }
+
+    bool IsChessPiece(GameObject obj)
+    {
+        return obj.name.Contains("King")   ||
+               obj.name.Contains("Queen")  ||
+               obj.name.Contains("Rook")   ||
+               obj.name.Contains("Bishop") ||
+               obj.name.Contains("Knight") ||
+               obj.name.Contains("Pawn");
+    }
+
+    void TryGrab(GameObject target)
+    {
+        if (IsChessPiece(target))
+            grabbedPiece = target;
     }
 }
