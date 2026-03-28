@@ -246,67 +246,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!1001 &546704538
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6598815579406187026, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.92897
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 11.27616
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
-      propertyPath: m_Name
-      value: XR Device Simulator
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
 --- !u!1 &699620576
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,14 +1021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ec0e90d4f7e4ac44b655d61a24f68bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CubeSpawner
-  chessBoardPrefab: {fileID: 3435836903007206023, guid: 909309b20c764054fadafa54e882fd21, type: 3}
-  chessPiecePrefabs:
-  - {fileID: 499773563146490896, guid: c5f775c78507df2479325ab2400990a8, type: 3}
-  - {fileID: 5289643453626173872, guid: 40f01f94a083d074593c1833a037d094, type: 3}
-  - {fileID: 4850202499120458595, guid: 79132d4ca4696a144a9aeb49e8ce2c2f, type: 3}
-  - {fileID: 5709870310139668765, guid: 666a36d88dc9c5e4887b43c8ceabddbd, type: 3}
-  - {fileID: 4285608204085471868, guid: c273f61d491799c4aa18fea98fea086d, type: 3}
-  - {fileID: 8132924128442301358, guid: 2a6ab3fdccce26240a824799394fc43b, type: 3}
+  chessBoardPrefab: {fileID: 1644584938431337559, guid: fca65ba269af7d54e81ded5e64576b15, type: 3}
   editorSpawnDistance: 1.5
 --- !u!114 &1803870075
 MonoBehaviour:
@@ -1259,4 +1191,3 @@ SceneRoots:
   - {fileID: 1491328220}
   - {fileID: 699620580}
   - {fileID: 2113742868}
-  - {fileID: 546704538}

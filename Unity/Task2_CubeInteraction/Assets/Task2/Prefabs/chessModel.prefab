@@ -1,0 +1,132 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1644584938431337559
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7767632230740684114}
+  - component: {fileID: 8077133962803004978}
+  m_Layer: 0
+  m_Name: chessModel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7767632230740684114
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644584938431337559}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2316883353302073207}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8077133962803004978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644584938431337559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecafe722432c1fa4aaa20af6e4e83045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChessSetup
+  ChessModel: {fileID: 1644584938431337559}
+  chessBoardModel: {fileID: 3929907574012691505}
+  boardInset: 0.015
+  yOffset: 0.0005
+  pawnPrefab: {fileID: 5709870310139668765, guid: 666a36d88dc9c5e4887b43c8ceabddbd, type: 3}
+  rookPrefab: {fileID: 8132924128442301358, guid: 2a6ab3fdccce26240a824799394fc43b, type: 3}
+  knightPrefab: {fileID: 4850202499120458595, guid: 79132d4ca4696a144a9aeb49e8ce2c2f, type: 3}
+  bishopPrefab: {fileID: 499773563146490896, guid: c5f775c78507df2479325ab2400990a8, type: 3}
+  queenPrefab: {fileID: 4285608204085471868, guid: c273f61d491799c4aa18fea98fea086d, type: 3}
+  kingPrefab: {fileID: 5289643453626173872, guid: 40f01f94a083d074593c1833a037d094, type: 3}
+  whitePiece: {fileID: 2100000, guid: dabbe1764b15c404686fcb78b4b41e09, type: 2}
+  blackPiece: {fileID: 2100000, guid: 636db85594b9dc047886d8f046cb5342, type: 2}
+  pawnScale: {x: 0.4, y: 0.4, z: 0.4}
+  rookScale: {x: 0.4, y: 0.4, z: 0.4}
+  knightScale: {x: 0.4, y: 0.4, z: 0.4}
+  bishopScale: {x: 0.4, y: 0.4, z: 0.4}
+  queenScale: {x: 0.4, y: 0.4, z: 0.4}
+  kingScale: {x: 0.4, y: 0.4, z: 0.4}
+--- !u!1001 &1812520078055898806
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7767632230740684114}
+    m_Modifications:
+    - target: {fileID: 3435836903007206023, guid: 909309b20c764054fadafa54e882fd21, type: 3}
+      propertyPath: m_Name
+      value: CHessBoardModel2(Clone)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4107393129208676801, guid: 909309b20c764054fadafa54e882fd21, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4107393129208676801, guid: 909309b20c764054fadafa54e882fd21, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4107393129208676801, guid: 909309b20c764054fadafa54e882fd21, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4107393129208676801, guid: 909309b20c764054fadafa54e882fd21, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4107393129208676801, guid: 909309b20c764054fadafa54e882fd21, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4107393129208676801, guid: 909309b20c764054fadafa54e882fd21, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4107393129208676801, guid: 909309b20c764054fadafa54e882fd21, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4107393129208676801, guid: 909309b20c764054fadafa54e882fd21, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4107393129208676801, guid: 909309b20c764054fadafa54e882fd21, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4107393129208676801, guid: 909309b20c764054fadafa54e882fd21, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 909309b20c764054fadafa54e882fd21, type: 3}
+--- !u!4 &2316883353302073207 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4107393129208676801, guid: 909309b20c764054fadafa54e882fd21, type: 3}
+  m_PrefabInstance: {fileID: 1812520078055898806}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3929907574012691505 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3435836903007206023, guid: 909309b20c764054fadafa54e882fd21, type: 3}
+  m_PrefabInstance: {fileID: 1812520078055898806}
+  m_PrefabAsset: {fileID: 0}

@@ -7,13 +7,10 @@ using UnityEngine.InputSystem;
 public class CubeSpawner : MonoBehaviour
 {
     public GameObject chessBoardPrefab;
-    public GameObject[] chessPiecePrefabs;
     public float editorSpawnDistance = 1.5f;
 
     private ARRaycastManager raycastManager;
     private GameObject spawnedBoard;
-    private List<GameObject> spawnedPieces = new List<GameObject>();
-    private List<Vector3> defaultPositions = new List<Vector3>();
     private bool boardSpawned = false;
 
     void Start()
@@ -68,41 +65,21 @@ public class CubeSpawner : MonoBehaviour
     {
         spawnedBoard = Instantiate(chessBoardPrefab, position, rotation);
         boardSpawned = true;
-        SpawnPiecesOnBoard();
-    }
-
-    void SpawnPiecesOnBoard()
-    {
-        if (chessPiecePrefabs == null || chessPiecePrefabs.Length == 0 || spawnedBoard == null)
-            return;
-
-        spawnedPieces.Clear();
-        defaultPositions.Clear();
-        FallbackSpawnGrid();
-    }
-
-    void FallbackSpawnGrid()
-    {
-        Vector3 boardPos = spawnedBoard.transform.position;
-        float spacing = 1.2f;
-
-        for (int i = 0; i < chessPiecePrefabs.Length; i++)
-        {
-            if (chessPiecePrefabs[i] == null) continue;
-            Vector3 pos = boardPos + new Vector3((i - chessPiecePrefabs.Length / 2f) * spacing, 0.01f, 0f);
-            GameObject piece = Instantiate(chessPiecePrefabs[i], pos, Quaternion.identity);
-            piece.transform.SetParent(spawnedBoard.transform);
-            spawnedPieces.Add(piece);
-            defaultPositions.Add(pos);
-        }
+        // ChessSetup on the chessModel prefab handles piece placement automatically
     }
 
     public void ResetPieces()
     {
-        for (int i = 0; i < spawnedPieces.Count; i++)
+        // Find ChessSetup on the spawned board and re-run setup
+        if (spawnedBoard != null)
         {
-            if (spawnedPieces[i] != null)
-                spawnedPieces[i].transform.position = defaultPositions[i];
+            ChessSetup setup = spawnedBoard.GetComponentInChildren<ChessSetup>();
+            if (setup != null)
+            {
+                // Destroy existing pieces and re-place
+                Destroy(spawnedBoard);
+                boardSpawned = false;
+            }
         }
     }
 }
