@@ -24,12 +24,13 @@ In AR mode, the chessboard aligns with an **Image Target** and adapts to its siz
 - **Materials:**
   - `WhitePiece.mat`
   - `BlackPiece.mat`
+  (if it doesn't work simply create a new white and blac material)
 
 ## How to Use
 
 1. Open the project in **Unity**.
-2. Create a GameObject for the **ChessModel** (also to be the child of the AR Image Target).
-3. Assign the **chessBoardModel** (child mesh of the ChessModel) in the Inspector.
+2. Create a GameObject for the **ChessModel** (also to be the child of the AR Image Target) of size 0.02x0.02x0.02.
+3. Assign the **chessBoardModel** (child mesh of the ChessModel) in the Inspector (do not add the chess pieces, just the board model).
 4. Assign all piece prefabs and materials to the `ChessSetup` script in the Inspector.
 5. Configure scaling and offsets as needed (the values here are specifically for the AR Image Target).
    - `boardInset` – Adjust if your board has extra borders (0.015).
