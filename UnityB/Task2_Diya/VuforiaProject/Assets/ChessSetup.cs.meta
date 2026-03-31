@@ -1,0 +1,29 @@
+fileFormatVersion: 2
+guid: 9908d613ec875cf42adc5a4c23360de2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - ChessModel: {fileID: 1644584938431337559, guid: fca65ba269af7d54e81ded5e64576b15,
+      type: 3}
+  - chessBoardModel: {fileID: 919132149155446097, guid: 7ea3e6d607f45644f8de12ce514dc062,
+      type: 3}
+  - pawnPrefab: {fileID: 919132149155446097, guid: 619d290e4cc8bc0489a2fcdabaa8e51e,
+      type: 3}
+  - rookPrefab: {fileID: 919132149155446097, guid: f29bb49fbcd79bc4bb9ca03c4e52dfb4,
+      type: 3}
+  - knightPrefab: {fileID: 919132149155446097, guid: 8e4da3143212cde45b1ed5d82751d1b6,
+      type: 3}
+  - bishopPrefab: {fileID: 919132149155446097, guid: 28db35fbc0c6c3d44841c439834a4dae,
+      type: 3}
+  - queenPrefab: {fileID: 919132149155446097, guid: d79d2b859acee5d4bb8af55dbd20ef4c,
+      type: 3}
+  - kingPrefab: {fileID: 919132149155446097, guid: d688a14ae1502d840ae12ad4564da78b,
+      type: 3}
+  - whitePiece: {fileID: 2100000, guid: 8b957f9b969c3904aae9e8575925eac6, type: 2}
+  - blackPiece: {fileID: 2100000, guid: 84d471a4bcf8a954da6ab8a7b498f12e, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
