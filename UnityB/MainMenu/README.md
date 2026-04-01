@@ -110,11 +110,9 @@ Finally, an **empty GameObject** called `MenuManager` is created to hold all can
 
 
 ---
-## Demo Video
-Interface behaviour can be seen in the video, also can be accessed through: [Group 7 - Demo Videos](https://drive.google.com/drive/folders/17kt-myof2gih7YZU_Fex1HrL3-zN2w4d?usp=sharing)
 
 ## Demonstration
 
-Check the `MainMenuDemoVideo.mp4` for a visual walkthrough of the working system.
+Check the `MainMenuDemoVideo.mp4` for a visual walkthrough of the working system. Can also be accessed through: [Group 7 - Demo Videos](https://drive.google.com/drive/folders/17kt-myof2gih7YZU_Fex1HrL3-zN2w4d?usp=sharing)
 
 ---
