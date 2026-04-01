@@ -41,4 +41,5 @@ In AR mode, the chessboard aligns with an **Image Target** and adapts to its siz
 
 ## Demonstration
 
-A short video demonstrating the correct setup and AR placement is provided in the repository. Make sure all models and materials are in place to replicate the results.
+A short video demonstrating the correct setup and AR placement is provided in the repository. Make sure all models and materials are in place to replicate the results. Can also be accessed at:
+[Group 7 - Demo Videos](https://drive.google.com/drive/folders/17kt-myof2gih7YZU_Fex1HrL3-zN2w4d?usp=sharing)
