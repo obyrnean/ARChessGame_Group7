@@ -3,6 +3,3 @@ Headset Implementation following the link provided to visualise the interaction 
 
 Set up by following the steps from this link:  https://developers.meta.com/horizon/documentation/unity/unity-tutorial-hello-vr/  
 
-## Videos
-Video provigin proof of working inetraction and ChessModel visualization. 
-
