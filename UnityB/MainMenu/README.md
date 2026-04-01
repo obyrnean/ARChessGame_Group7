@@ -1,4 +1,4 @@
-# Initial Interface Setup for Menu System
+# Initial Interface Setup for Menu System - Ane O'Byrne
 
 This project provides the setup for the **initial interface menu and its interactions** in Unity.  
 >  **Note:** No AR features are integrated yet. This interface works with a normal camera view and will be updated later for AR interactions.
