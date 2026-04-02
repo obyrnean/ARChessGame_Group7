@@ -3,7 +3,7 @@ using UnityEngine;
 public class ChessSetup : MonoBehaviour
 {
     [Header("ChessModel Parent")]
-    public GameObject ChessModel; // This is the top-level parent (also child of the iamge target)
+    public GameObject ChessModel; // This is the top-level parent (also child of the image target)
 
     [Header("Board Model")]
     public GameObject chessBoardModel; // The actual 3D board mesh inside ChessModel
@@ -19,6 +19,9 @@ public class ChessSetup : MonoBehaviour
     public GameObject bishopPrefab;
     public GameObject queenPrefab;
     public GameObject kingPrefab;
+
+    [Header("Extra")]
+    public GameObject extraBlockPrefab; // assign in inspector
 
     [Header("Materials")]
     public Material whitePiece;
@@ -52,7 +55,7 @@ public class ChessSetup : MonoBehaviour
             return;
         }
 
-        // Create parent objects as children of ChessModel (or whichever name you gave)
+        // Create parent objects
         whiteParent = new GameObject("WhitePieces");
         whiteParent.transform.SetParent(ChessModel.transform, false);
 
@@ -61,6 +64,9 @@ public class ChessSetup : MonoBehaviour
 
         CreateBoardPositions();
         PlacePieces();
+
+        // NEW: spawn extra blocks
+        SpawnExtraBlocks();
     }
 
     void CreateBoardPositions()
@@ -161,5 +167,20 @@ public class ChessSetup : MonoBehaviour
         GameObject piece = Instantiate(prefab, position, rotation, parent);
         piece.transform.localScale = scale;
         ApplyMaterial(piece, mat);
+    }
+
+    // NEW FUNCTION
+    void SpawnExtraBlocks()
+    {
+        if (extraBlockPrefab == null)
+            return;
+
+        // Spawn inside WhitePieces
+        GameObject whiteBlock = Instantiate(extraBlockPrefab, whiteParent.transform);
+        whiteBlock.transform.localPosition = Vector3.zero;
+
+        // Spawn inside BlackPieces
+        GameObject blackBlock = Instantiate(extraBlockPrefab, blackParent.transform);
+        blackBlock.transform.localPosition = Vector3.zero;
     }
 }
