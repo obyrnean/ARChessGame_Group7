@@ -1,4 +1,4 @@
-# ARBoardGAmes_Group7
+# ARBoardGames_Group7
 CSU44057 Extended Reality Final Project
 
 ## Demo Videos
