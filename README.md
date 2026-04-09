@@ -1,6 +1,12 @@
 # ARBoardGames_Group7
 CSU44057 Extended Reality Final Project
 
+## Folders
+- `3D_Models` contains the model files created in Blender.
+- `MetaQuest3_Implementation` contains final implementation of Unity System into Headset.
+- `Unity` contains initial, but currently not used in final system, work done on Unity.
+- `UnityB` contains work done on PlanB, as well as `ChessModelSetup` and `MainMenu` folders that are used in the final project.
+
 ## Final
 Final Submitted working system can be found in `MetaQuest3_Implementation` inside `FinalWorkingSystem`.
 
